@@ -174,7 +174,7 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.swipe) {
+    if (changes['swipe']) {
       this.helperService.manageSwipe(this.swipe, this.elementRef, 'image', () => this.showNext(), () => this.showPrev());
     }
   }
@@ -307,7 +307,7 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
 
   showNext(): boolean {
     if (this.isAnimating) {
-      return;
+      return false;
     }
     if (this.canShowNext() && this.canChangeImage) {
       let action;

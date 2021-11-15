@@ -60,11 +60,11 @@ export class NgxGalleryThumbnailsComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.selectedIndex) {
+    if (changes['selectedIndex']) {
       this.validateIndex();
     }
 
-    if (changes.swipe) {
+    if (changes['swipe']) {
       this.helperService.manageSwipe(this.swipe, this.elementRef,
         'thumbnails', () => this.moveRight(), () => this.moveLeft());
     }
@@ -128,9 +128,7 @@ export class NgxGalleryThumbnailsComponent implements OnChanges {
   }
 
   hasLink(index: number): boolean {
-    if (this.links && this.links.length && this.links[index]) {
-      return true;
-    }
+    return !!(this.links && this.links.length && this.links[index]);
   }
 
   moveRight(): void {

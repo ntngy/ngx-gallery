@@ -102,7 +102,7 @@ export class NgxGalleryPreviewComponent implements OnInit, OnDestroy, OnChanges 
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.swipe) {
+    if (changes['swipe']) {
       this.helperService.manageSwipe(this.swipe, this.elementRef,
         'preview', () => this.showNext(), () => this.showPrev());
     }
