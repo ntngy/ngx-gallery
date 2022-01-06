@@ -54,6 +54,7 @@ export interface INgxGalleryOptions {
     previewCloseOnClick?: boolean;
     previewCloseOnEsc?: boolean;
     previewKeyboardNavigation?: boolean;
+    previewScrollNavigation?: boolean;
     previewAnimation?: boolean;
     previewAutoPlay?: boolean;
     previewAutoPlayInterval?: number;
@@ -154,6 +155,7 @@ export class NgxGalleryOptions implements INgxGalleryOptions {
     rotateRightIcon?: string;
     downloadIcon?: string;
     actions?: NgxGalleryAction[];
+    previewScrollNavigation?: boolean;
 
     constructor(obj: INgxGalleryOptions) {
 
@@ -222,6 +224,7 @@ export class NgxGalleryOptions implements INgxGalleryOptions {
         this.previewCloseOnClick = use(obj.previewCloseOnClick, false);
         this.previewCloseOnEsc = use(obj.previewCloseOnEsc, false);
         this.previewKeyboardNavigation = use(obj.previewKeyboardNavigation, false);
+        this.previewScrollNavigation = use(obj.previewScrollNavigation, false);
         this.previewAnimation = use(obj.previewAnimation, true);
         this.previewAutoPlay = use(obj.previewAutoPlay, false);
         this.previewAutoPlayInterval = use(obj.previewAutoPlayInterval, 2000);
